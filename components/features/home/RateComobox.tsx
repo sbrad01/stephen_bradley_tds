@@ -33,7 +33,13 @@ export default function RateComboBox({ items, onChange, value }: Props) {
         <InputGroupAddon align="inline-start">
           <div className="relative rounded-full h-5 w-5 overflow-hidden">
             {selectedFlag && (
-              <Image src={selectedFlag} alt="" fill className="object-cover" />
+              <Image
+                src={selectedFlag}
+                alt=""
+                fill
+                sizes="20px"
+                className="object-cover"
+              />
             )}
           </div>
         </InputGroupAddon>
@@ -46,14 +52,20 @@ export default function RateComboBox({ items, onChange, value }: Props) {
               countries[item.value as keyof typeof countries]?.image;
             return (
               <ComboboxItem
-                key={item.id}
+                key={item.value}
                 value={item.value}
                 aria-label={`currency-${item.value}`}
                 className="flex items-center gap-1 cursor-pointer"
               >
                 <div className="relative rounded-full h-6 w-6 overflow-hidden">
                   {flagSrc && (
-                    <Image src={flagSrc} alt="" fill className="object-cover" />
+                    <Image
+                      src={flagSrc}
+                      alt=""
+                      fill
+                      sizes="24px"
+                      className="object-cover"
+                    />
                   )}
                 </div>
                 <Text value={item.label} classOverride="font-bold" />
