@@ -1,0 +1,9 @@
+{
+  "home": {
+    "title": "Herramienta de tipos de cambio y conversor de divisas",
+    "subheading": "Consulta los tipos de cambio de divisas en tiempo real"
+  },
+  "button": {
+    "convert": "Convertir"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "home": {
+    "title": "Exchange Rate and Currency Converter Tool",
+    "subheading": "Check live foreign currency exchange rates"
+  },
+  "button": {
+    "convert": "Convert"
+  }
+}

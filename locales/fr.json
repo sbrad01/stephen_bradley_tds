@@ -1,0 +1,9 @@
+{
+  "home": {
+    "title": "Outil de taux de change et convertisseur de devises",
+    "subheading": "Consultez les taux de change des devises en temps réel"
+  },
+  "button": {
+    "convert": "Convertir"
+  }
+}
