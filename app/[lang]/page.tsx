@@ -5,7 +5,8 @@ import Title from "@/components/typography/Title";
 import Text from "@/components/typography/Text";
 import { getDictionary } from "@/locales/locales";
 import CurrencyForm from "@/components/features/home/CurrencyForm";
-import { fetchCurrencies } from "@/lib/currency-beacon";
+import { getCurrencies } from "@/services/currencies";
+import type { Rate } from "@/components/features/home/RateSelect";
 
 export function generateStaticParams() {
   return [{ lang: "en-GB" }, { lang: "en" }, { lang: "es" }, { lang: "fr" }];
@@ -36,7 +37,7 @@ async function HomeContent({
   const { lang } = await params;
 
   const dict = await getDictionary(lang);
-  const rates = await fetchCurrencies();
+  const rates: Rate[] = await getCurrencies();
 
   return (
     <div className="flex flex-col justify-center text-center max-w-3xl space-y-4">
@@ -44,7 +45,7 @@ async function HomeContent({
       <Text value={dict.home.subheading} />
       <div className="flex justify-center">
         <div className="max-w-xl">
-          <CurrencyForm rates={Object.values(rates)} />
+          <CurrencyForm rates={rates} />
         </div>
       </div>
     </div>

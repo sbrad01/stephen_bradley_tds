@@ -65,6 +65,7 @@ const CurrencyForm = ({ rates }: { rates: Rate[] }) => {
         currency={toCurrency}
         onCurrencyChange={handleCurrencyChange}
         onAmountChange={handleAmountChange}
+        disabledInput
       />
     </Card>
   );

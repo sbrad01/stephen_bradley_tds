@@ -20,6 +20,7 @@ type Props = {
   value: number | null;
   rates: Rate[];
   currency: Currency;
+  disabledInput?: boolean;
   onAmountChange: (value: number, inputType: InputType) => void;
   onCurrencyChange: (value: Currency, inputType: InputType) => void;
 };
@@ -29,6 +30,7 @@ const RateSelect = ({
   value,
   rates,
   currency,
+  disabledInput,
   onAmountChange,
   onCurrencyChange,
 }: Props) => {
@@ -41,7 +43,7 @@ const RateSelect = ({
   };
 
   const items = formatSelectItems(rates, "short_code", "short_code");
-  const currentSymbol = rates.filter((r) => r.short_code === currency)[0]
+  const currentSymbol = rates.filter((r) => r.short_code === currency)?.[0]
     .symbol;
 
   return (
@@ -55,6 +57,7 @@ const RateSelect = ({
         currentSymbol={currentSymbol}
         value={value}
         onChange={handleAmountChange}
+        disabledInput={disabledInput}
       />
     </div>
   );

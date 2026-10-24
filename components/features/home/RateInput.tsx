@@ -5,9 +5,15 @@ type Props = {
   currentSymbol: string;
   value: number | null;
   onChange: (value: string) => void;
+  disabledInput?: boolean;
 };
 
-export default function RateInput({ currentSymbol, value, onChange }: Props) {
+export default function RateInput({
+  currentSymbol,
+  value,
+  onChange,
+  disabledInput,
+}: Props) {
   const [isInFocused, setIsInFocused] = useState(false);
   const [prettyValue, setPrettyValue] = useState<string | null>(null);
 
@@ -46,6 +52,7 @@ export default function RateInput({ currentSymbol, value, onChange }: Props) {
         onBlur={handleInputBlur}
         onFocus={() => setIsInFocused(true)}
         aria-label="money conversion amount"
+        disabled={disabledInput}
       />
     </span>
   );

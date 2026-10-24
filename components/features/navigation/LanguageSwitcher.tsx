@@ -4,7 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import TranslationSelect, {
   LANGUAGES,
   type Language,
-} from "@/components/TranslationSelect";
+} from "@/components/features/navigation/TranslationSelect";
 
 const DEFAULT_LANGUAGE: Language = "en";
 

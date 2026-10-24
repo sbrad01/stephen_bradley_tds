@@ -1,3 +1,5 @@
+import type { Rate } from "@/components/features/home/RateSelect";
+
 const getApiUrl = () => {
   const base =
     typeof window !== "undefined"
@@ -11,9 +13,14 @@ export const getCurrencies = async () => {
   const res = await fetch(getApiUrl(), {
     method: "GET",
   });
+
   if (!res.ok) throw new Error(`Currency request failed: ${res.status}`);
 
-  return res.json();
+  const jsonRes = (await res.json()) as Record<string, Rate>;
+  const filteredCurrencies = Object.values(jsonRes).filter(
+    (c) => c.short_code !== undefined,
+  );
+  return filteredCurrencies;
 };
 
 export const convertCurrencies = async (

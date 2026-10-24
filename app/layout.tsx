@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Sans, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Title from "@/components/typography/Title";
-import LanguageSwitcher from "@/components/features/layout/LanguageSwitcher";
+import LanguageSwitcher from "@/components/features/navigation/LanguageSwitcher";
 
 const ibmPlexSans = IBM_Plex_Sans({
   variable: "--font-ibm-plex-sans",

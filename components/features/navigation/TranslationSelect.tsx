@@ -52,7 +52,13 @@ export default function TranslationSelect({ value, onChange }: Props) {
       >
         <InputGroupAddon align="inline-start">
           <div className="relative rounded-full h-5 w-5 overflow-hidden">
-            <Image src={flagSrc(value)} alt="" fill className="object-cover" />
+            <Image
+              src={flagSrc(value)}
+              alt=""
+              fill
+              sizes="20px"
+              className="object-cover"
+            />
           </div>
         </InputGroupAddon>
       </ComboboxInput>
@@ -71,6 +77,7 @@ export default function TranslationSelect({ value, onChange }: Props) {
                   src={flagSrc(item.value)}
                   alt=""
                   fill
+                  sizes="20px"
                   className="object-cover"
                 />
               </div>
